@@ -1,6 +1,8 @@
 silverstripe-templater
 =========================
 
+[![Build Status](https://travis-ci.org/SamdogNZ/silverstripe-templater.svg?branch=master)](https://travis-ci.org/SamdogNZ/silverstripe-templater)
+
 This module allows CMS users to select specific page theme or page template.
 
 ## Documentation
