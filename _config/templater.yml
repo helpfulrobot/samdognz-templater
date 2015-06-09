@@ -1,0 +1,18 @@
+---
+name: templater
+---
+Page:
+  extensions:
+    - TemplaterPageExtension
+
+ContentController:
+  extensions:
+    - TemplaterPageExtension
+
+Templater:
+# You can define a list of page types the can have a specific theme
+#  enabled_for_pagetypes:
+#    - ErrorPage
+
+# Or, you can set it to 'all' ==> All page types can have specific theme
+  enabled_for_pagetypes: all

@@ -1,0 +1,17 @@
+Page:
+  hello:
+    Title: Page Hello
+    Content: Hi Hello page
+    URLSegment: hello
+    PageTemplate: Hello
+
+  default:
+    Title: Default page
+    Content: Default page content
+    URLSegment: default
+
+  blue:
+    Title: Theme Blue page
+    Content: Theme Blue page content
+    URLSegment: blue
+    Theme: blue

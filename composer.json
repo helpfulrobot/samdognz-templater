@@ -1,0 +1,33 @@
+{
+  "name": "samdogNZ/templater",
+  "description": "This module allows CMS users to select specific page theme or page template.",
+  "keywords": [
+    "silverstripe",
+    "page",
+    "theme",
+    "template"
+  ],
+  "type": "silverstripe-module",
+  "homepage": "https://github.com/samdogNZ/silverstripe-templater",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mohamed Alsharaf",
+      "email": "mohamed.alsharaf@gmail.com",
+      "homepage": "http://my.geek.nz",
+      "role": "Developer"
+    },
+    {
+      "name": "Vinnie Watson",
+      "email": "vinnie.watson@samdog.nz",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "silverstripe/framework": "~3.1",
+    "silverstripe/cms": "~3.1"
+  },
+  "support": {
+    "issues": "https://github.com/samdogNZ/silverstripe-templater/issues"
+  }
+}
