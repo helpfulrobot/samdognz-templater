@@ -13,8 +13,8 @@ before_script:
   - cd ~/builds/ss
   - mkdir -p themes/blue/templates/Layout
   - echo "<div>hello</div>" >> themes/simple/templates/Layout/Hello.ss
-  - echo "<div><h1>$Title</h1><div class="content">$Content</div>hello blue</div>" >> themes/blue/templates/Layout/Hello.ss
-  - echo "<h1>$Title</h1><div class="content">$Content</div>" >> themes/blue/templates/Layout/Page.ss
-  - echo "I'm in the Blue Theme\n$Layout" >> themes/blue/templates/Page.ss
+  - echo "<div><h1>\$Title</h1><div class="content">\$Content</div>hello blue</div>" >> themes/blue/templates/Layout/Hello.ss
+  - echo "<h1>\$Title</h1><div class="content">\$Content</div>" >> themes/blue/templates/Layout/Page.ss
+  - echo "I'm in the Blue Theme \$Layout" >> themes/blue/templates/Page.ss
 
 script: phpunit -c templater/ --coverage-text templater/tests
