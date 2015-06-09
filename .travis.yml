@@ -7,8 +7,14 @@ env:
   - DB=MYSQL CORE_RELEASE=3.1
 
 before_script:
+  - composer self-update
   - git clone git://github.com/silverstripe-labs/silverstripe-travis-support.git ~/travis-support
   - php ~/travis-support/travis_setup.php --source `pwd` --target ~/builds/ss
   - cd ~/builds/ss
+  - mkdir -p themes/blue/templates/Layout
+  - echo "<div>hello</div>" >> themes/simple/templates/Layout/Hello.ss
+  - echo "<div><h1>$Title</h1><div class="content">$Content</div>hello blue</div>" >> themes/blue/templates/Layout/Hello.ss
+  - echo "<h1>$Title</h1><div class="content">$Content</div>" >> themes/blue/templates/Layout/Hello.ss
+  - echo "I'm in the Blue Theme\n$Layout" >> themes/blue/templates/Page.ss
 
 script: phpunit -c templater/ --coverage-text templater/tests
