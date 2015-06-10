@@ -39,15 +39,6 @@ class TemplaterTest extends FunctionalTest
         $this->assertNotContains('Hi Hello page', $response->getBody());
     }
 
-    public function testTemplatesFetched()
-    {
-        $page = $this->createPage('blue');
-
-        $this->assertContains('Hello2', $page->getAllTemplates());
-        $page->Theme = 'simple';
-        $this->assertNotContains('Hello2', $page->getAllTemplates());
-    }
-
     public function testNewPageTypeFields()
     {
         $page = $this->createPage('blue');
