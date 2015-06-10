@@ -14,6 +14,7 @@ before_script:
   - mkdir -p themes/blue/templates/Layout
   - echo "<div>hello</div>" >> themes/simple/templates/Layout/Hello.ss
   - echo "<div><h1>\$Title</h1><div class="content">\$Content</div>hello blue</div>" >> themes/blue/templates/Layout/Hello.ss
+  - echo "<div><h1>\$Title</h1><div class="content">\$Content</div>hello2 blue</div>" >> themes/blue/templates/Layout/Hello2.ss
   - echo "<h1>\$Title</h1><div class="content">\$Content</div>" >> themes/blue/templates/Layout/Page.ss
   - echo "I'm in the Blue Theme \$Layout" >> themes/blue/templates/Page.ss
 
