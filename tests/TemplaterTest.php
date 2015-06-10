@@ -23,10 +23,6 @@ class TemplaterTest extends FunctionalTest
         $response = Director::test(Director::makeRelative($page->Link()));
         $this->assertContains('Theme Blue page content', $response->getBody());
         $this->assertContains('I\'m in the Blue Theme', $response->getBody());
-
-        // Make theme chooser enabled to specific page type
-        Config::inst()->remove('Templater', 'enabled_for_pagetypes');
-        Config::inst()->update('Templater', 'enabled_for_pagetypes', ['ErrorPage']);
     }
 
     public function testTemplate()
@@ -41,6 +37,47 @@ class TemplaterTest extends FunctionalTest
         $response = Director::test(Director::makeRelative($page->Link()));
         $this->assertContains('hello', $response->getBody());
         $this->assertNotContains('Hi Hello page', $response->getBody());
+    }
+
+    public function testTemplatesFetched()
+    {
+        $page = $this->createPage('blue');
+
+        $this->assertContains('Hello2', $page->getAllTemplates());
+        $page->Theme = 'simple';
+        $this->assertNotContains('Hello2', $page->getAllTemplates());
+    }
+
+    public function testNewPageTypeFields()
+    {
+        $page = $this->createPage('blue');
+        $fields = $page->getCMSFields();
+
+        $this->assertNotEmpty($fields);
+        $this->assertNotEmpty($fields->dataFieldByName('Theme'));
+        $this->assertNotEmpty($fields->dataFieldByName('PageTemplate'));
+    }
+
+    public function testDisabledOption()
+    {
+        // Enable module to error pages only
+        Config::inst()->remove('Templater', 'enabled_for_pagetypes');
+        Config::inst()->update('Templater', 'enabled_for_pagetypes', ['ErrorPage']);
+
+        $page = $this->createPage('blue');
+        $fields = $page->getCMSFields();
+
+        $this->assertEmpty($fields->dataFieldByName('Theme'));
+        $this->assertEmpty($fields->dataFieldByName('PageTemplate'));
+
+        // Assert page content
+        $response = Director::test(Director::makeRelative($page->Link()));
+        $this->assertContains('Theme Blue page content', $response->getBody());
+        $this->assertNotContains('I\'m in the Blue Theme', $response->getBody());
+
+        // Enable module to all pages
+        Config::inst()->remove('Templater', 'enabled_for_pagetypes');
+        Config::inst()->update('Templater', 'enabled_for_pagetypes', 'all');
     }
 
     protected function createPage($name)
