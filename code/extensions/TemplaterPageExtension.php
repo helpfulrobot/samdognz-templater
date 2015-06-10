@@ -97,7 +97,12 @@ class TemplaterPageExtension extends DataExtension
      */
     public function getAllTemplates()
     {
-        $dir = new DirectoryIterator(Director::baseFolder() . '/themes/' . $this->owner->Theme . '/templates/Layout');
+        $themeName = $this->owner->Theme;
+        if (empty($theme)) {
+            $themeName = Config::inst()->get('SSViewer', 'theme');
+        }
+
+        $dir = new DirectoryIterator(Director::baseFolder() . '/themes/' . $themeName . '/templates/Layout');
         $currentTemplates = array();
         foreach ($dir as $fileinfo) {
             if (!$fileinfo->isDot() && $fileinfo->isFile()
