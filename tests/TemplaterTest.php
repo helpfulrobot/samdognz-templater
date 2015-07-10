@@ -3,7 +3,7 @@
 /**
  * TemplaterTest contains test cases for the module classes
  *
- * @author Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ * @author Mohamed Alsharaf <mohamed.alsharaf@samdog.nz>
  * @package templater
  */
 class TemplaterTest extends FunctionalTest
