@@ -3,7 +3,7 @@
 /**
  * TemplaterPageExtension is an extension class for adding new CMSFields for changing a page theme or/and template
  *
- * @author  Mohamed Alsharaf <mohamed.alsharaf@gmail.com>
+ * @author  Mohamed Alsharaf <mohamed.alsharaf@samdog.nz>
  * @author  Vinnie Watson <vinnie.watson@samdog.nz>
  * @package templater
  */
