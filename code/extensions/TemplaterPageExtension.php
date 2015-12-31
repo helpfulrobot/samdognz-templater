@@ -123,5 +123,4 @@ class TemplaterPageExtension extends DataExtension
     {
         return $this->owner->renderWith(array($this->owner->PageTemplate, 'Page'));
     }
-
 }
